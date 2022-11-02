@@ -23,6 +23,14 @@ public class StackAndQueueDS {
             tmp.next = node;
         }
     }
+    public void deque(){
+        Node tmp = top;
+        if(tmp != null){
+            int dVal = top.data;
+            System.out.println("The Value dequeued is: "+dVal);
+            top = top.next;
+        }
+    }
 
     public void getDisplay(){
         Node tmp = top;
@@ -39,6 +47,9 @@ public class StackAndQueueDS {
         st.createQueue(30);
         st.createQueue(70);
 
+        st.getDisplay();
+        System.out.println();
+        st.deque();
         st.getDisplay();
 
     }
