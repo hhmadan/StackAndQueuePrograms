@@ -10,7 +10,7 @@ public class StackAndQueueDS {
         }
     }
     Node top = null;
-    public void createStack(int data){
+    public void createQueue(int data){
         Node node = new Node(data);
         if(top==null){
             top = node;
@@ -35,9 +35,9 @@ public class StackAndQueueDS {
 
     public static void main(String[] args) {
         StackAndQueueDS st = new StackAndQueueDS();
-        st.createStack(56);
-        st.createStack(30);
-        st.createStack(70);
+        st.createQueue(56);
+        st.createQueue(30);
+        st.createQueue(70);
 
         st.getDisplay();
 
