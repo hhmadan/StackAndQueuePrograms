@@ -32,6 +32,26 @@ public class StackAndQueueDS {
             tmp = tmp.next;
         }
     }
+    public void peek(){
+        if(top == null){
+            System.out.println("This Stack is Empty");
+        }
+        System.out.println("\nTop Element of Stack is: "+top.data);
+    }
+    public void pop(){
+        if(top == null){
+            System.out.println("This Stack is Empty");
+        }
+        System.out.println("\nPopped Element of Stack is: "+top.data);
+        top = top.next;
+    }
+    public void checkEmpty(){
+        while(top != null){
+            peek();
+            pop();
+        }
+        System.out.println("Stack is Empty");
+    }
 
     public static void main(String[] args) {
         StackAndQueueDS st = new StackAndQueueDS();
@@ -40,6 +60,8 @@ public class StackAndQueueDS {
         st.push(56);
 
         st.getDisplay();
-
+        st.peek();
+        st.pop();
+        st.checkEmpty();
     }
 }
