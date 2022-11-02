@@ -9,19 +9,19 @@ public class StackAndQueueDS {
             this.next = null;
         }
     }
-    private Node top;
-    public StackAndQueueDS(){
-        this.top = null;
-    }
-    public void push(int data){
+    Node top = null;
+    public void createStack(int data){
         Node node = new Node(data);
         if(top==null){
-            node.next = null;
+            top = node;
         }
         else {
-            node.next = top;
+            Node tmp = top;
+            while (tmp.next != null){
+                tmp = tmp.next;
+            }
+            tmp.next = node;
         }
-        top = node;
     }
 
     public void getDisplay(){
@@ -32,36 +32,14 @@ public class StackAndQueueDS {
             tmp = tmp.next;
         }
     }
-    public void peek(){
-        if(top == null){
-            System.out.println("This Stack is Empty");
-        }
-        System.out.println("\nTop Element of Stack is: "+top.data);
-    }
-    public void pop(){
-        if(top == null){
-            System.out.println("This Stack is Empty");
-        }
-        System.out.println("\nPopped Element of Stack is: "+top.data);
-        top = top.next;
-    }
-    public void checkEmpty(){
-        while(top != null){
-            peek();
-            pop();
-        }
-        System.out.println("Stack is Empty");
-    }
 
     public static void main(String[] args) {
         StackAndQueueDS st = new StackAndQueueDS();
-        st.push(70);
-        st.push(30);
-        st.push(56);
+        st.createStack(56);
+        st.createStack(30);
+        st.createStack(70);
 
         st.getDisplay();
-        st.peek();
-        st.pop();
-        st.checkEmpty();
+
     }
 }
